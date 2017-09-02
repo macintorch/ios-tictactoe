@@ -12,7 +12,8 @@ class ViewController: UIViewController {
 
     @IBAction func pressButton(_ sender: Any) {
         
-        print("Button pressed")
+        // prints the button tag
+        print("\((sender as AnyObject).tag) Button pressed")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
