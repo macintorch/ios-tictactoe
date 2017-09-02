@@ -12,18 +12,29 @@ class ViewController: UIViewController {
     
     // 1 is noughts, 2 is crosses
     var activePlayer = 1
+    
+    var gameState = [0, 0, 0, 0, 0, 0, 0, 0, 0] // 0 - empty, 1 - noughts, 2 - crosses
 
     @IBAction func pressButton(_ sender: Any) {
         
-        if activePlayer == 1 {
+        let activePosition = (sender as AnyObject).tag - 1
+        
+        // to avoid other user tap on a taken spot
+        if gameState[activePosition] == 0 {
             
-            // set image when press button
-            (sender as AnyObject).setImage(UIImage(named: "nought.png"), for:[])
-            activePlayer = 2
+            gameState[activePosition] = activePlayer
             
-        } else {
-            (sender as AnyObject).setImage(UIImage(named: "cross.png"), for:[])
-            activePlayer = 1
+            if activePlayer == 1 {
+                
+                // set image when press button
+                (sender as AnyObject).setImage(UIImage(named: "nought.png"), for:[])
+                activePlayer = 2
+                
+            } else {
+                (sender as AnyObject).setImage(UIImage(named: "cross.png"), for:[])
+                activePlayer = 1
+            }
+            
         }
         
         
