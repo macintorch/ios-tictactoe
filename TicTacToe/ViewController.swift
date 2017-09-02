@@ -14,6 +14,28 @@ class ViewController: UIViewController {
     @IBOutlet weak var playAgainButton: UIButton!
     @IBAction func playAgainActionButton(_ sender: Any) {
         
+         activeGame = true
+        
+         activePlayer = 1
+        
+         gameState = [0, 0, 0, 0, 0, 0, 0, 0, 0] // 0 - empty, 1 - noughts, 2 - crosses
+        
+        // loop through all the buttons and make the images hidden
+        for i in 1..<10 {
+            if let button = view.viewWithTag(i) as? UIButton {
+                button.setImage(nil, for: [])
+            }
+        }
+        
+        // make the button and label dissapear
+        winningLabel.isHidden = true
+        playAgainButton.isHidden = true
+        
+        winningLabel.center = CGPoint(x: winningLabel.center.x - 500, y: winningLabel.center.y)
+        
+        playAgainButton.center = CGPoint(x: playAgainButton.center.x - 500, y: playAgainButton.center.y)
+
+        
         
     }
     // 1 is noughts, 2 is crosses
@@ -23,6 +45,7 @@ class ViewController: UIViewController {
     var activePlayer = 1
     
     var gameState = [0, 0, 0, 0, 0, 0, 0, 0, 0] // 0 - empty, 1 - noughts, 2 - crosses
+    
     
     let winningCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
 
