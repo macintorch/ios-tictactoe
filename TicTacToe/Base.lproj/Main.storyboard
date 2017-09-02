@@ -127,22 +127,48 @@
                                     <action selector="pressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iDn-K1-xCp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noughts has WON!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f99-rz-ffR">
+                                <rect key="frame" x="80" y="318.5" width="215" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="214.5" id="IaL-TN-rou"/>
+                                    <constraint firstAttribute="height" constant="30" id="Vfb-hC-p8f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RES-Y0-q2S">
+                                <rect key="frame" x="149" y="434" width="77" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="msu-xs-UVQ"/>
+                                    <constraint firstAttribute="height" constant="40" id="veM-57-M65"/>
+                                </constraints>
+                                <state key="normal" title="Play Again"/>
+                                <connections>
+                                    <action selector="playAgainActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oSg-FY-Xd9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Dbb-fp-fmp" firstAttribute="leading" secondItem="XFD-q6-g3z" secondAttribute="trailing" constant="20" id="0qY-Up-jCI"/>
                             <constraint firstItem="bCB-7x-xa2" firstAttribute="top" secondItem="Dbb-fp-fmp" secondAttribute="bottom" constant="37" id="1XZ-Xx-BZD"/>
                             <constraint firstItem="Dbb-fp-fmp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4tY-RW-yUd"/>
+                            <constraint firstItem="mSB-2A-c8U" firstAttribute="leading" secondItem="RES-Y0-q2S" secondAttribute="trailing" constant="35" id="Abc-xy-N2q"/>
                             <constraint firstItem="XFD-q6-g3z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="C30-zg-qH9"/>
+                            <constraint firstItem="f99-rz-ffR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hgh-n3-jak"/>
+                            <constraint firstItem="f99-rz-ffR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IXd-fU-4fE"/>
                             <constraint firstItem="mSB-2A-c8U" firstAttribute="top" secondItem="YBh-su-cy0" secondAttribute="bottom" constant="37" id="UvO-98-80m"/>
                             <constraint firstItem="YBh-su-cy0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WiR-xy-3st"/>
                             <constraint firstItem="ElE-fb-WBU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wn2-Z9-nXc"/>
+                            <constraint firstItem="RES-Y0-q2S" firstAttribute="leading" secondItem="xg6-Mq-DBG" secondAttribute="trailing" constant="35" id="Z8c-q7-bGL"/>
                             <constraint firstItem="xg6-Mq-DBG" firstAttribute="top" secondItem="XFD-q6-g3z" secondAttribute="bottom" constant="37" id="b53-pe-UX1"/>
                             <constraint firstItem="Dbb-fp-fmp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ebz-Vw-IBT"/>
                             <constraint firstItem="YBh-su-cy0" firstAttribute="top" secondItem="o5f-LH-Qpa" secondAttribute="bottom" constant="32" id="fRS-DL-IbM"/>
                             <constraint firstItem="ElE-fb-WBU" firstAttribute="leading" secondItem="XQz-Ed-fVq" secondAttribute="trailing" constant="20" id="fXi-o1-TRN"/>
                             <constraint firstItem="o5f-LH-Qpa" firstAttribute="leading" secondItem="ElE-fb-WBU" secondAttribute="trailing" constant="20" id="jg3-Qi-CaW"/>
                             <constraint firstItem="bCB-7x-xa2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lbi-Sd-oHf"/>
+                            <constraint firstItem="RES-Y0-q2S" firstAttribute="top" secondItem="Dbb-fp-fmp" secondAttribute="bottom" constant="49" id="olK-oJ-7m7"/>
                             <constraint firstItem="YBh-su-cy0" firstAttribute="leading" secondItem="Dbb-fp-fmp" secondAttribute="trailing" constant="20" id="pCe-Se-zhw"/>
                             <constraint firstItem="LJk-bT-jVn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pFj-Z3-N3W"/>
                             <constraint firstItem="Dbb-fp-fmp" firstAttribute="top" secondItem="ElE-fb-WBU" secondAttribute="bottom" constant="32" id="rx9-BJ-uBb"/>
@@ -153,6 +179,10 @@
                             <constraint firstItem="YBh-su-cy0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zkD-Vx-0SQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playAgainButton" destination="RES-Y0-q2S" id="pWk-bf-gww"/>
+                        <outlet property="winningLabel" destination="f99-rz-ffR" id="IVg-8S-SIR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

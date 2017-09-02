@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var winningLabel: UILabel!
+    @IBOutlet weak var playAgainButton: UIButton!
+    @IBAction func playAgainActionButton(_ sender: Any) {
+        
+        
+    }
     // 1 is noughts, 2 is crosses
     
     var activeGame = true
@@ -47,7 +53,21 @@ class ViewController: UIViewController {
                     // We have a winner!
                     activeGame = false
                     
-                    print(gameState[combination[0]])
+                    winningLabel.isHidden = false
+                    playAgainButton.isHidden = false
+                    
+                    if (gameState[combination[0]]) == 1 {
+                        winningLabel.text = "Noughts has won!"
+                    } else {
+                        winningLabel.text = "Crosses has won!"
+                    }
+                    
+                    UIView.animate(withDuration: 1, animations: {
+                        
+                        self.winningLabel.center = CGPoint(x: self.winningLabel.center.x + 500 , y: self.winningLabel.center.y)
+                        
+                        self.playAgainButton.center = CGPoint(x: self.playAgainButton.center.x + 500, y: self.playAgainButton.center.y)
+                    })
                     
                 }
             }
@@ -61,6 +81,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+      winningLabel.isHidden = true
+        playAgainButton.isHidden = true
+        
+        winningLabel.center = CGPoint(x: winningLabel.center.x - 500, y: winningLabel.center.y)
+        
+        playAgainButton.center = CGPoint(x: playAgainButton.center.x - 500, y: playAgainButton.center.y)
     }
 
     override func didReceiveMemoryWarning() {
